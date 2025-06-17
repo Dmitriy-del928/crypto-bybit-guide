@@ -1,52 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Чек-лист безопасности криптотрейдинга</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Arial', sans-serif; }
-        body { background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); color: white; min-height: 100vh; padding: 20px; display: flex; justify-content: center; align-items: center; }
-        .container { background: rgba(0, 0, 0, 0.7); max-width: 800px; width: 100%; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); text-align: center; }
-        h1 { font-size: 2.8rem; margin-bottom: 20px; color: #ffcc00; text-shadow: 0 0 10px rgba(255, 204, 0, 0.5); }
-        .btn { display: inline-block; background: linear-gradient(to right, #ff416c, #ff4b2b); color: white; font-size: 1.3rem; font-weight: bold; padding: 18px 45px; border-radius: 50px; text-decoration: none; margin: 25px 0; box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4); transition: all 0.3s ease; border: none; cursor: pointer; }
-        .btn:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(255, 75, 43, 0.6); }
-        .btn-download { background: linear-gradient(to right, #00b09b, #96c93d); box-shadow: 0 5px 15px rgba(0, 176, 155, 0.4); font-size: 1.5rem; padding: 20px 50px; margin: 40px 0 20px; }
-        .countdown { font-size: 2.5rem; font-weight: bold; margin: 30px 0; color: #ffcc00; }
-        @media (max-width: 768px) { .container { padding: 25px; } h1 { font-size: 2.2rem; } }
+        /* Общие стили */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Шапка */
+        header {
+            background: #1a2a6c;
+            padding: 20px 0;
+            color: white;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        /* Блок 1: Герой */
+        .hero {
+            background: linear-gradient(rgba(26, 42, 108, 0.8), rgba(26, 42, 108, 0.9)), url('https://via.placeholder.com/1920x800');
+            background-size: cover;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 24px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Блок 2: История */
+        .story {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .story h2 {
+            font-size: 36px;
+            color: #1a2a6c;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        /* Блок 3: Форма (ваш текущий) */
+        .form-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+        .form-section h2 {
+            font-size: 36px;
+            color: #1a2a6c;
+            margin-bottom: 20px;
+        }
+        .form-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        #emailInput {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        #submitBtn {
+            background: #ff4b2b;
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        #submitBtn:hover {
+            background: #ff416c;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(255,75,43,0.4);
+        }
+        
+        /* Футер */
+        footer {
+            background: #1a2a6c;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .disclaimer {
+            font-size: 14px;
+            opacity: 0.7;
+            max-width: 800px;
+            margin: 20px auto 0;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>СКАЧАЙТЕ ЧЕК-ЛИСТ БЕЗОПАСНОСТИ</h1>
-        <p>Как избежать потери 500 000₽ на крипторынке</p>
-        
-        <button class="btn btn-download" onclick="downloadChecklist()">СКАЧАТЬ PDF ЧЕК-ЛИСТ</button>
-        
-        <div id="redirectSection" style="display: none;">
-            <h2>ЧЕК-ЛИСТ ГОТОВ К СКАЧИВАНИЮ!</h2>
-            <p>Через <span id="countdown" class="countdown">5</span> секунд вы перейдете на Bybit</p>
-            <button class="btn" onclick="redirectToBybit()">ПЕРЕЙТИ СЕЙЧАС</button>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">КриптоБезопасность</div>
         </div>
-    </div>
+    </header>
+
+    <!-- Блок 1: Герой -->
+    <section class="hero">
+        <div class="container">
+            <h1>Как я потерял 500 000₽ на крипторынке</h1>
+            <p>Мой горький опыт, который убережет вас от фатальных ошибок в трейдинге</p>
+        </div>
+    </section>
+
+    <!-- Блок 2: История -->
+    <section class="story">
+        <div class="container story-content">
+            <h2>Моя история</h2>
+            <p>Все началось с небольших, но успешных сделок. Я чувствовал себя непобедимым, увеличивал ставки, игнорировал правила риск-менеджмента. Когда рынок резко развернулся, я потерял не только прибыль, но и весь депозит - 500 000 рублей.</p>
+            <p>После этого краха я проанализировал все свои ошибки и создал чек-лист безопасности, который теперь использую сам и делюсь с вами.</p>
+            <p>Эти правила помогли мне восстановить капитал и избежать новых потерь.</p>
+        </div>
+    </section>
+
+    <!-- Блок 3: Форма -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2>Получите чек-лист безопасности</h2>
+                <p>Скачайте PDF с 5 правилами, которые спасут ваш депозит</p>
+                
+                <form id="mainForm">
+                    <input type="email" id="emailInput" placeholder="Ваш email" required>
+                    <button type="submit" id="submitBtn">Получить чек-лист</button>
+                </form>
+                
+                <div id="successMessage" style="display:none; margin-top:30px; padding:20px; background:#e8f5e9; border-radius:5px;">
+                    <h3>Чек-лист отправлен!</h3>
+                    <p>Через <span id="countdown">5</span> секунд вы будете перенаправлены на Bybit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <p>© 2025 КриптоБезопасность. Все права защищены.</p>
+            <p class="disclaimer">Криптовалюты — это высокорисковые активы. Вы можете потерять все свои средства. Не инвестируйте больше, чем готовы потерять.</p>
+        </div>
+    </footer>
 
     <script>
-        function downloadChecklist() {
-            // Скачивание PDF
-            const link = document.createElement('a');
-            link.href = 'files/checklist.pdf';
-            link.download = 'Чек-лист_безопасности_криптотрейдинга.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+        document.getElementById('mainForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
             
-            // Показываем секцию редиректа
-            document.getElementById('redirectSection').style.display = 'block';
+            // Скачиваем PDF
+            const link = document.createElement('a');
+            link.href = 'https://docs.google.com/document/d/1_Mtz1Ufr_44uQXTZ_YB_a7z00X19-dox8aKh_iQhjUg/export?format=pdf';
+            link.download = 'Чек-лист_безопасности_криптотрейдинга.pdf';
+            link.click();
+            
+            // Показываем сообщение
+            document.getElementById('successMessage').style.display = 'block';
             
             // Запускаем таймер
-            startCountdown();
-        }
-        
-        function startCountdown() {
             let seconds = 5;
             const countdownEl = document.getElementById('countdown');
             const timer = setInterval(() => {
@@ -55,14 +223,11 @@
                 
                 if(seconds <= 0) {
                     clearInterval(timer);
-                    redirectToBybit();
+                    window.location.href = 'https://www.bybit.com/invite?ref=6M0PJ9';
                 }
             }, 1000);
-        }
-        
-        function redirectToBybit() {
-            window.location.href = 'https://www.bybit.com/invite?ref=6M0PJ9';
-        }
+        });
     </script>
 </body>
 </html>
+"Restore original design"
