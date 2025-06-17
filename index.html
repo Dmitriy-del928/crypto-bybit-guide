@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Чек-лист безопасности криптотрейдинга</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Arial', sans-serif; }
+        body { background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); color: white; min-height: 100vh; padding: 20px; display: flex; justify-content: center; align-items: center; }
+        .container { background: rgba(0, 0, 0, 0.7); max-width: 800px; width: 100%; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); text-align: center; }
+        h1 { font-size: 2.8rem; margin-bottom: 20px; color: #ffcc00; text-shadow: 0 0 10px rgba(255, 204, 0, 0.5); }
+        .btn { display: inline-block; background: linear-gradient(to right, #ff416c, #ff4b2b); color: white; font-size: 1.3rem; font-weight: bold; padding: 18px 45px; border-radius: 50px; text-decoration: none; margin: 25px 0; box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4); transition: all 0.3s ease; border: none; cursor: pointer; }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(255, 75, 43, 0.6); }
+        .btn-download { background: linear-gradient(to right, #00b09b, #96c93d); box-shadow: 0 5px 15px rgba(0, 176, 155, 0.4); font-size: 1.5rem; padding: 20px 50px; margin: 40px 0 20px; }
+        .countdown { font-size: 2.5rem; font-weight: bold; margin: 30px 0; color: #ffcc00; }
+        @media (max-width: 768px) { .container { padding: 25px; } h1 { font-size: 2.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>СКАЧАЙТЕ ЧЕК-ЛИСТ БЕЗОПАСНОСТИ</h1>
+        <p>Как избежать потери 500 000₽ на крипторынке</p>
+        
+        <button class="btn btn-download" onclick="downloadChecklist()">СКАЧАТЬ PDF ЧЕК-ЛИСТ</button>
+        
+        <div id="redirectSection" style="display: none;">
+            <h2>ЧЕК-ЛИСТ ГОТОВ К СКАЧИВАНИЮ!</h2>
+            <p>Через <span id="countdown" class="countdown">5</span> секунд вы перейдете на Bybit</p>
+            <button class="btn" onclick="redirectToBybit()">ПЕРЕЙТИ СЕЙЧАС</button>
+        </div>
+    </div>
+
+    <script>
+        function downloadChecklist() {
+            // Скачивание PDF
+            const link = document.createElement('a');
+            link.href = 'files/checklist.pdf';
+            link.download = 'Чек-лист_безопасности_криптотрейдинга.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Показываем секцию редиректа
+            document.getElementById('redirectSection').style.display = 'block';
+            
+            // Запускаем таймер
+            startCountdown();
+        }
+        
+        function startCountdown() {
+            let seconds = 5;
+            const countdownEl = document.getElementById('countdown');
+            const timer = setInterval(() => {
+                seconds--;
+                countdownEl.textContent = seconds;
+                
+                if(seconds <= 0) {
+                    clearInterval(timer);
+                    redirectToBybit();
+                }
+            }, 1000);
+        }
+        
+        function redirectToBybit() {
+            window.location.href = 'https://www.bybit.com/invite?ref=6M0PJ9';
+        }
+    </script>
+</body>
+</html>
