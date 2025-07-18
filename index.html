@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJSNMZ3YLM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LJSNMZ3YLM');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LJSNMZ3YLM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LJSNMZ3YLM');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Чек-лист безопасности криптотрейдинга</title>
@@ -78,12 +77,12 @@
             text-align: center;
         }
         
-        /* Блок 3: Форма (ваш текущий) */
-        .form-section {
+        /* Блок 3: Кнопка скачивания */
+        .download-section {
             padding: 80px 0;
             text-align: center;
         }
-        .form-container {
+        .download-container {
             max-width: 600px;
             margin: 0 auto;
             background: white;
@@ -91,24 +90,16 @@
             border-radius: 10px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.1);
         }
-        .form-section h2 {
+        .download-section h2 {
             font-size: 36px;
             color: #1a2a6c;
             margin-bottom: 20px;
         }
-        .form-section p {
+        .download-section p {
             font-size: 18px;
             margin-bottom: 30px;
         }
-        #emailInput {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        #submitBtn {
+        #downloadBtn {
             background: #ff4b2b;
             color: white;
             border: none;
@@ -117,11 +108,44 @@
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s;
+            display: inline-block;
         }
-        #submitBtn:hover {
+        #downloadBtn:hover {
             background: #ff416c;
             transform: translateY(-3px);
             box-shadow: 0 7px 15px rgba(255,75,43,0.4);
+        }
+        
+        /* Блок 4: Регистрация на Bybit */
+        .bybit-section {
+            padding: 60px 0;
+            text-align: center;
+            background: #f1f8ff;
+        }
+        .bybit-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .bybit-section h2 {
+            font-size: 32px;
+            color: #1a2a6c;
+            margin-bottom: 20px;
+        }
+        #registerBtn {
+            background: #1a2a6c;
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        #registerBtn:hover {
+            background: #0d1a4a;
+            transform: translateY(-3px);
         }
         
         /* Футер */
@@ -149,7 +173,7 @@
             .hero p {
                 font-size: 18px;
             }
-            .form-container {
+            .download-container {
                 padding: 30px 20px;
             }
         }
@@ -181,23 +205,29 @@
         </div>
     </section>
 
-    <!-- Блок 3: Форма -->
-    <section class="form-section">
+    <!-- Блок 3: Кнопка скачивания -->
+    <section class="download-section">
         <div class="container">
-            <div class="form-container">
-                <h2>Получите чек-лист безопасности</h2>
-                <p>Скачайте PDF с 5 правилами, которые спасут ваш депозит</p>
+            <div class="download-container">
+                <h2>Скачайте чек-лист безопасности</h2>
+                <p>Получите PDF с 5 правилами, которые спасут ваш депозит</p>
                 
-                <form id="mainForm">
-                    <input type="email" id="emailInput" placeholder="Ваш email" required>
-                    <button type="submit" id="submitBtn">Получить чек-лист</button>
-                </form>
+                <button id="downloadBtn">Скачать чек-лист сейчас</button>
                 
                 <div id="successMessage" style="display:none; margin-top:30px; padding:20px; background:#e8f5e9; border-radius:5px;">
-                    <h3>Чек-лист отправлен!</h3>
+                    <h3>Чек-лист скачивается!</h3>
                     <p>Через <span id="countdown">5</span> секунд вы будете перенаправлены на Bybit</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Блок 4: Регистрация на Bybit -->
+    <section class="bybit-section">
+        <div class="bybit-container">
+            <h2>Начните безопасную торговлю на Bybit</h2>
+            <p>Платформа с продвинутой защитой активов и страховым фондом</p>
+            <button id="registerBtn">Зарегистрироваться на Bybit</button>
         </div>
     </section>
 
@@ -210,10 +240,7 @@
     </footer>
 
     <script>
-        document.getElementById('mainForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('emailInput').value;
-            
+        document.getElementById('downloadBtn').addEventListener('click', function() {
             // Скачиваем PDF
             const link = document.createElement('a');
             link.href = 'https://docs.google.com/document/d/1_Mtz1Ufr_44uQXTZ_YB_a7z00X19-dox8aKh_iQhjUg/export?format=pdf';
@@ -236,7 +263,11 @@
                 }
             }, 1000);
         });
+
+        // Добавляем обработчик для кнопки регистрации
+        document.getElementById('registerBtn').addEventListener('click', function() {
+            window.location.href = 'https://www.bybit.com/invite?ref=6M0PJ9';
+        });
     </script>
 </body>
 </html>
-"Restore original design"
