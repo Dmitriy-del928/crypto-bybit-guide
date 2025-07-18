@@ -14,13 +14,24 @@
     <title>Чек-лист безопасности криптотрейдинга</title>
     <style>
         /* Общие стили */
+        :root {
+            --primary: #1a2a6c;
+            --secondary: #3a4a9c;
+            --accent: #ff4b2b;
+            --light: #f8f9fa;
+            --dark: #0a0f29;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
             color: #333;
-            background-color: #0a0f29;
+            background-color: var(--dark);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(58, 74, 156, 0.1) 0px, transparent 50px),
+                radial-gradient(circle at 90% 80%, rgba(255, 75, 43, 0.08) 0px, transparent 70px);
         }
         .container {
             max-width: 1200px;
@@ -31,13 +42,14 @@
         /* Шапка */
         header {
             background: rgba(26, 42, 108, 0.9);
-            padding: 20px 0;
+            padding: 15px 0;
             color: white;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(5px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
         }
         .header-content {
             display: flex;
@@ -47,49 +59,78 @@
         .logo {
             font-size: 24px;
             font-weight: bold;
+            background: linear-gradient(to right, #ff4b2b, #ff416c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         /* Блок 1: Герой */
         .hero {
-            background: linear-gradient(rgba(10, 15, 41, 0.85), rgba(10, 15, 41, 0.9)), url('https://images.unsplash.com/photo-1620336655052-b57986f5a26a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 180px 0 100px;
+            background: 
+                linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%),
+                radial-gradient(circle at top right, rgba(255,75,43,0.3) 0%, transparent 40%),
+                radial-gradient(circle at bottom left, rgba(58,74,156,0.3) 0%, transparent 40%);
+            padding: 160px 0 100px;
             text-align: center;
             color: white;
             position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(135deg, transparent 48%, rgba(255,255,255,0.05) 50%, transparent 52%),
+                linear-gradient(45deg, transparent 48%, rgba(255,255,255,0.05) 50%, transparent 52%);
+            background-size: 60px 60px;
+            opacity: 0.1;
         }
         .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
         }
         .hero p {
-            font-size: 24px;
+            font-size: 22px;
             max-width: 800px;
             margin: 0 auto 40px;
             text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            position: relative;
         }
         
         /* Блок 2: История */
         .story {
             padding: 100px 0;
-            background: linear-gradient(rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.98)), url('https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-attachment: fixed;
+            background: var(--light);
             position: relative;
+        }
+        .story::before {
+            content: "";
+            position: absolute;
+            top: -60px;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top right, transparent 49.5%, var(--light) 50%);
         }
         .story-content {
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.85);
+            background: white;
             padding: 50px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 1;
         }
         .story h2 {
             font-size: 36px;
-            color: #1a2a6c;
+            color: var(--primary);
             margin-bottom: 30px;
             text-align: center;
         }
@@ -98,20 +139,22 @@
         .download-section {
             padding: 100px 0;
             text-align: center;
-            background: linear-gradient(rgba(10, 15, 41, 0.9), rgba(10, 15, 41, 0.95)), url('https://images.unsplash.com/photo-1620336655055-b9d4b3a6dc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: 
+                linear-gradient(45deg, var(--dark) 0%, #1c1f3d 100%),
+                radial-gradient(circle at 20% 30%, rgba(58,74,156,0.2) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255,75,43,0.15) 0%, transparent 40%);
             color: white;
+            position: relative;
         }
         .download-container {
             max-width: 600px;
             margin: 0 auto;
-            background: rgba(26, 42, 108, 0.8);
+            background: rgba(26, 42, 108, 0.7);
             padding: 50px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
         }
         .download-section h2 {
             font-size: 36px;
@@ -124,7 +167,7 @@
             color: #e0e0e0;
         }
         #downloadBtn {
-            background: #ff4b2b;
+            background: linear-gradient(to right, #ff4b2b, #ff416c);
             color: white;
             border: none;
             padding: 18px 50px;
@@ -135,43 +178,65 @@
             display: inline-block;
             font-weight: bold;
             box-shadow: 0 5px 15px rgba(255,75,43,0.4);
+            position: relative;
+            overflow: hidden;
         }
         #downloadBtn:hover {
-            background: #ff416c;
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(255,75,43,0.6);
+        }
+        #downloadBtn::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20px;
+            height: 200%;
+            background: rgba(255,255,255,0.3);
+            transform: rotate(25deg);
+            transition: all 0.7s;
+        }
+        #downloadBtn:hover::after {
+            left: 120%;
         }
         
         /* Блок 4: Регистрация на Bybit */
         .bybit-section {
             padding: 100px 0;
             text-align: center;
-            background: linear-gradient(rgba(26, 42, 108, 0.85), rgba(26, 42, 108, 0.9)), url('https://images.unsplash.com/photo-1620336655055-b9d4b3a6dc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
+            background: linear-gradient(to bottom, #f1f8ff, #e6f0ff);
+            position: relative;
+        }
+        .bybit-section::before {
+            content: "";
+            position: absolute;
+            top: -60px;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top left, transparent 49.5%, #f1f8ff 50%);
         }
         .bybit-container {
             max-width: 700px;
             margin: 0 auto;
-            background: rgba(0, 0, 0, 0.6);
+            background: white;
             padding: 50px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(26,42,108,0.1);
         }
         .bybit-section h2 {
             font-size: 38px;
-            color: white;
+            color: var(--primary);
             margin-bottom: 20px;
         }
         .bybit-section p {
             font-size: 20px;
             margin-bottom: 30px;
-            color: #e0e0e0;
+            color: #555;
         }
         #registerBtn {
-            background: #ff4b2b;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
             border: none;
             padding: 18px 50px;
@@ -182,21 +247,44 @@
             display: inline-block;
             font-weight: bold;
             margin-top: 20px;
-            box-shadow: 0 5px 15px rgba(255,75,43,0.4);
+            box-shadow: 0 5px 15px rgba(26,42,108,0.3);
+            position: relative;
+            overflow: hidden;
         }
         #registerBtn:hover {
-            background: #ff416c;
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255,75,43,0.6);
+            box-shadow: 0 10px 25px rgba(26,42,108,0.4);
+        }
+        #registerBtn::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20px;
+            height: 200%;
+            background: rgba(255,255,255,0.3);
+            transform: rotate(25deg);
+            transition: all 0.7s;
+        }
+        #registerBtn:hover::after {
+            left: 120%;
         }
         
         /* Блок 5: Социальные сети */
         .social-section {
-            background: linear-gradient(rgba(15, 28, 69, 0.9), rgba(15, 28, 69, 0.95)), url('https://images.unsplash.com/photo-1620336655055-b9d4b3a6dc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(to bottom, var(--primary), #0f1c45);
             padding: 80px 0;
             text-align: center;
+            position: relative;
+        }
+        .social-section::before {
+            content: "";
+            position: absolute;
+            top: -60px;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top right, transparent 49.5%, var(--primary) 50%);
         }
         .social-container {
             max-width: 800px;
@@ -206,10 +294,9 @@
             color: white;
             margin-bottom: 20px;
             font-size: 36px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
         .social-section p {
-            color: #ccc;
+            color: rgba(255,255,255,0.8);
             max-width: 600px;
             margin: 0 auto 40px;
             font-size: 18px;
@@ -228,16 +315,16 @@
             text-decoration: none;
             font-size: 20px;
             transition: all 0.3s;
-            background: rgba(26, 42, 108, 0.7);
+            background: rgba(255,255,255,0.1);
             padding: 15px 25px;
             border-radius: 50px;
             backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.15);
         }
         .social-link:hover {
-            color: #ff4b2b;
+            background: rgba(255,255,255,0.2);
             transform: translateY(-5px);
-            background: rgba(26, 42, 108, 0.9);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         .social-icon {
             width: 36px;
@@ -249,35 +336,40 @@
         .telegram-icon {
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>');
         }
-        .telegram-icon:hover {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff4b2b"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>');
-        }
         .odnoklassniki-icon {
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.226 16.891c-.885.389-2.246.709-4.226.709-1.981 0-3.341-.32-4.226-.709-.505-.222-.717-.773-.494-1.278.222-.505.773-.717 1.278-.494.664.292 1.89.481 3.442.481s2.778-.189 3.442-.481c.505-.222 1.055-.011 1.278.494.223.505.011 1.055-.494 1.278zm.565-3.523c-.351.351-.922.351-1.273 0l-1.986-1.986-1.986 1.986c-.351.351-.922.351-1.273 0s-.351-.922 0-1.273l1.986-1.986-1.986-1.986c-.351-.351-.351-.922 0-1.273s.922-.351 1.273 0l1.986 1.986 1.986-1.986c.351-.351.922-.351 1.273 0s.351.922 0 1.273l-1.986 1.986 1.986 1.986c.351.351.351.922 0 1.273z"/></svg>');
-        }
-        .odnoklassniki-icon:hover {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff4b2b"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.226 16.891c-.885.389-2.246.709-4.226.709-1.981 0-3.341-.32-4.226-.709-.505-.222-.717-.773-.494-1.278.222-.505.773-.717 1.278-.494.664.292 1.89.481 3.442.481s2.778-.189 3.442-.481c.505-.222 1.055-.011 1.278.494.223.505.011 1.055-.494 1.278zm.565-3.523c-.351.351-.922.351-1.273 0l-1.986-1.986-1.986 1.986c-.351.351-.922.351-1.273 0s-.351-.922 0-1.273l1.986-1.986-1.986-1.986c-.351-.351-.351-.922 0-1.273s.922-.351 1.273 0l1.986 1.986 1.986-1.986c.351-.351.922-.351 1.273 0s.351.922 0 1.273l-1.986 1.986 1.986 1.986c.351.351.351.922 0 1.273z"/></svg>');
         }
         
         /* Футер */
         footer {
-            background: rgba(10, 15, 41, 0.95);
-            color: white;
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
             padding: 40px 0;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 14px;
         }
         .disclaimer {
-            font-size: 14px;
             opacity: 0.7;
             max-width: 800px;
             margin: 20px auto 0;
         }
         
+        /* Анимации и эффекты */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
         /* Адаптивность */
         @media (max-width: 768px) {
             .hero {
-                padding: 150px 0 80px;
+                padding: 140px 0 80px;
             }
             .hero h1 {
                 font-size: 36px;
@@ -299,6 +391,10 @@
                 font-size: 18px;
                 padding: 12px 20px;
             }
+            #downloadBtn, #registerBtn {
+                padding: 15px 30px;
+                font-size: 18px;
+            }
         }
     </style>
 </head>
@@ -313,7 +409,7 @@
     <!-- Блок 1: Герой -->
     <section class="hero">
         <div class="container">
-            <h1>Как я потерял 500 000₽ на крипторынке</h1>
+            <h1 class="floating">Как я потерял 500 000₽ на крипторынке</h1>
             <p>Мой горький опыт, который убережет вас от фатальных ошибок в трейдинге</p>
         </div>
     </section>
