@@ -148,6 +148,50 @@
             transform: translateY(-3px);
         }
         
+        /* Блок социальных сетей */
+        .social-section {
+            background: #0f1c45;
+            padding: 30px 0;
+            text-align: center;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        .social-link:hover {
+            color: #ff4b2b;
+            transform: translateY(-3px);
+        }
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .telegram-icon {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>');
+        }
+        .telegram-icon:hover {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff4b2b"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>');
+        }
+        .odnoklassniki-icon {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.226 16.891c-.885.389-2.246.709-4.226.709-1.981 0-3.341-.32-4.226-.709-.505-.222-.717-.773-.494-1.278.222-.505.773-.717 1.278-.494.664.292 1.89.481 3.442.481s2.778-.189 3.442-.481c.505-.222 1.055-.011 1.278.494.223.505.011 1.055-.494 1.278zm.565-3.523c-.351.351-.922.351-1.273 0l-1.986-1.986-1.986 1.986c-.351.351-.922.351-1.273 0s-.351-.922 0-1.273l1.986-1.986-1.986-1.986c-.351-.351-.351-.922 0-1.273s.922-.351 1.273 0l1.986 1.986 1.986-1.986c.351-.351.922-.351 1.273 0s.351.922 0 1.273l-1.986 1.986 1.986 1.986c.351.351.351.922 0 1.273z"/></svg>');
+        }
+        .odnoklassniki-icon:hover {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff4b2b"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.226 16.891c-.885.389-2.246.709-4.226.709-1.981 0-3.341-.32-4.226-.709-.505-.222-.717-.773-.494-1.278.222-.505.773-.717 1.278-.494.664.292 1.89.481 3.442.481s2.778-.189 3.442-.481c.505-.222 1.055-.011 1.278.494.223.505.011 1.055-.494 1.278zm.565-3.523c-.351.351-.922.351-1.273 0l-1.986-1.986-1.986 1.986c-.351.351-.922.351-1.273 0s-.351-.922 0-1.273l1.986-1.986-1.986-1.986c-.351-.351-.351-.922 0-1.273s.922-.351 1.273 0l1.986 1.986 1.986-1.986c.351-.351.922-.351 1.273 0s.351.922 0 1.273l-1.986 1.986 1.986 1.986c.351.351.351.922 0 1.273z"/></svg>');
+        }
+        
         /* Футер */
         footer {
             background: #1a2a6c;
@@ -175,6 +219,10 @@
             }
             .download-container {
                 padding: 30px 20px;
+            }
+            .social-links {
+                flex-direction: column;
+                gap: 15px;
             }
         }
     </style>
@@ -228,6 +276,25 @@
             <h2>Начните безопасную торговлю на Bybit</h2>
             <p>Платформа с продвинутой защитой активов и страховым фондом</p>
             <button id="registerBtn">Зарегистрироваться на Bybit</button>
+        </div>
+    </section>
+
+    <!-- Блок 5: Социальные сети -->
+    <section class="social-section">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 20px;">Присоединяйтесь к сообществу</h2>
+            <p style="color: #ccc; max-width: 600px; margin: 0 auto;">Получайте свежие материалы по безопасности трейдинга и анализу рынка</p>
+            
+            <div class="social-links">
+                <a href="https://t.me/risk_management_cryptocurrency" class="social-link" target="_blank">
+                    <div class="social-icon telegram-icon"></div>
+                    Telegram канал
+                </a>
+                <a href="https://ok.ru/cripto.guru" class="social-link" target="_blank">
+                    <div class="social-icon odnoklassniki-icon"></div>
+                    Группа в Одноклассниках
+                </a>
+            </div>
         </div>
     </section>
 
