@@ -61,7 +61,7 @@
             -webkit-text-fill-color: transparent;
         }
         
-        /* Блок 1: Герой - ОБНОВЛЕННЫЙ ФОН */
+        /* Блок 1: Герой */
         .hero {
             background: 
                 linear-gradient(rgba(10, 15, 41, 0.85), rgba(10, 15, 41, 0.9)),
@@ -85,7 +85,7 @@
             text-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
         
-        /* Блок 2: История - ОБНОВЛЕННЫЙ ФОН */
+        /* Блок 2: История */
         .story {
             padding: 100px 0;
             background: 
@@ -175,15 +175,16 @@
             left: 120%;
         }
         
-        /* Блок 4: Регистрация на Bybit - ОБНОВЛЕННЫЙ ФОН */
+        /* Блок 4: Регистрация на Bybit */
         .bybit-section {
             padding: 100px 0;
             text-align: center;
             background: 
                 linear-gradient(rgba(26, 42, 108, 0.85), rgba(26, 42, 108, 0.9)),
-                url('https://images.unsplash.com/photo-1620336655052-b57986f5a26a');
+                url('https://images.unsplash.com/photo-1640340434855-6084b1f4901c');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: white;
         }
         .bybit-container {
@@ -225,7 +226,7 @@
             box-shadow: 0 10px 25px rgba(255,75,43,0.6);
         }
         
-        /* Блок 5: Социальные сети */
+        /* Блок 5: Социальные сети - ОБНОВЛЕННЫЙ */
         .social-section {
             background: 
                 linear-gradient(rgba(15, 28, 69, 0.9), rgba(15, 28, 69, 0.95)),
@@ -254,7 +255,7 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 25px;
             margin-top: 20px;
             flex-wrap: wrap;
         }
@@ -263,12 +264,13 @@
             align-items: center;
             color: white;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
             transition: all 0.3s;
             background: rgba(26, 42, 108, 0.7);
             padding: 15px 25px;
             border-radius: 50px;
             backdrop-filter: blur(5px);
+            min-width: 220px;
         }
         .social-link:hover {
             color: #ff4b2b;
@@ -282,12 +284,16 @@
             margin-right: 15px;
             background-size: contain;
             background-repeat: no-repeat;
+            background-position: center;
         }
         .telegram-icon {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>');
+        }
+        .vk-icon {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M19.915 13.028c-.388-.49-.277-.708 0-1.146.005-.005 3.208-4.431 3.538-5.932l.001-.001c.164-.547 0-.949-.793-.949h-2.624c-.668 0-.976.345-1.141.731 0 0-1.336 3.198-3.226 5.271-.61.599-.892.791-1.225.791-.164 0-.419-.192-.419-.739V5.949c0-.656-.187-.949-.74-.949H9.161c-.419 0-.668.306-.668.591 0 .622.945.765 1.043 2.515v3.797c0 .832-.151.985-.486.985-.892 0-3.057-3.211-4.34-6.886-.259-.713-.512-1.001-1.185-1.001H1.782c-.749 0-.9.345-.9.731 0 .682.892 4.073 4.148 8.553C6.318 17.343 9.37 19.5 12.058 19.5c1.671 0 1.875-.368 1.875-1.001v-2.313c0-.737.158-.884.687-.884.388 0 1.056.192 2.616 1.667C19.001 18.5 19.403 19 20.405 19h2.624c.748 0 1.127-.368.909-1.094-.499-1.527-3.871-4.668-4.023-4.878z"/></svg>');
         }
         .odnoklassniki-icon {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.226 16.891c-.885.389-2.246.709-4.226.709-1.981 0-3.341-.32-4.226-.709-.505-.222-.717-.773-.494-1.278.222-.505.773-.717 1.278-.494.664.292 1.89.481 3.442.481s2.778-.189 3.442-.481c.505-.222 1.055-.011 1.278.494.223.505.011 1.055-.494 1.278zm.565-3.523c-.351.351-.922.351-1.273 0l-1.986-1.986-1.986 1.986c-.351.351-.922.351-1.273 0s-.351-.922 0-1.273l1.986-1.986-1.986-1.986c-.351-.351-.351-.922 0-1.273s.922-.351 1.273 0l1.986 1.986 1.986-1.986c.351-.351.922-.351 1.273 0s.351.922 0 1.273l-1.986 1.986 1.986 1.986c.351.351.351.922 0 1.273z"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.226 16.891c-.885.389-2.246.709-4.226.709-1.981 0-3.341-.32-4.226-.709-.505-.222-.717-.773-.494-1.278.222-.505.773-.717 1.278-.494.664.292 1.89.481 3.442.481s2.778-.189 3.442-.481c.505-.222 1.055-.011 1.278.494.223.505.011 1.055-.494 1.278zm.565-3.523c-.351.351-.922.351-1.273 0l-1.986-1.986-1.986 1.986c-.351.351-.922.351-1.273 0s-.351-.922 0-1.273l1.986-1.986-1.986-1.986c-.351-.351-.351-.922 0-1.273s.922-.351 1.273 0l1.986 1.986 1.986-1.986c.351-.351.922-.351 1.273 0s.351.922 0 1.273l-1.986 1.986 1.986 1.986c.351.351.351.922 0 1.273z"/></svg>');
         }
         
         /* Футер */
@@ -338,8 +344,12 @@
                 gap: 15px;
             }
             .social-link {
-                font-size: 18px;
+                font-size: 16px;
                 padding: 12px 20px;
+                min-width: auto;
+                width: 100%;
+                max-width: 280px;
+                margin: 0 auto;
             }
             #downloadBtn, #registerBtn {
                 padding: 15px 30px;
@@ -356,7 +366,7 @@
         </div>
     </header>
 
-    <!-- Блок 1: Герой - ОБНОВЛЕННЫЙ ФОН -->
+    <!-- Блок 1: Герой -->
     <section class="hero">
         <div class="container">
             <h1 class="floating">Как я потерял 500 000₽ на крипторынке</h1>
@@ -364,7 +374,7 @@
         </div>
     </section>
 
-    <!-- Блок 2: История - ОБНОВЛЕННЫЙ ФОН -->
+    <!-- Блок 2: История -->
     <section class="story">
         <div class="container story-content">
             <h2>Моя история</h2>
@@ -391,7 +401,7 @@
         </div>
     </section>
 
-    <!-- Блок 4: Регистрация на Bybit - ОБНОВЛЕННЫЙ ФОН -->
+    <!-- Блок 4: Регистрация на Bybit -->
     <section class="bybit-section">
         <div class="container">
             <div class="bybit-container">
@@ -402,7 +412,7 @@
         </div>
     </section>
 
-    <!-- Блок 5: Социальные сети -->
+    <!-- Блок 5: Социальные сети - ОБНОВЛЕННЫЙ -->
     <section class="social-section">
         <div class="container">
             <div class="social-container">
@@ -413,6 +423,10 @@
                     <a href="https://t.me/risk_management_cryptocurrency" class="social-link" target="_blank">
                         <div class="social-icon telegram-icon"></div>
                         Telegram канал
+                    </a>
+                    <a href="https://vk.com/club231122794" class="social-link" target="_blank">
+                        <div class="social-icon vk-icon"></div>
+                        Группа ВКонтакте
                     </a>
                     <a href="https://ok.ru/cripto.guru" class="social-link" target="_blank">
                         <div class="social-icon odnoklassniki-icon"></div>
