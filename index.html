@@ -20,6 +20,7 @@
             --accent: #ff4b2b;
             --light: #f8f9fa;
             --dark: #0a0f29;
+            --gold: #ffd166;
         }
         
         body {
@@ -175,7 +176,7 @@
             left: 120%;
         }
         
-        /* Блок 4: Регистрация на Bybit */
+        /* Блок 4: Регистрация на Bybit - ОБНОВЛЕННЫЙ С БОНУСАМИ */
         .bybit-section {
             padding: 100px 0;
             text-align: center;
@@ -188,10 +189,10 @@
             color: white;
         }
         .bybit-container {
-            max-width: 700px;
+            max-width: 900px;
             margin: 0 auto;
             background: rgba(0, 0, 0, 0.6);
-            padding: 50px;
+            padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             backdrop-filter: blur(5px);
@@ -199,12 +200,96 @@
         .bybit-section h2 {
             font-size: 38px;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
-        .bybit-section p {
-            font-size: 20px;
+        
+        /* Стили для блока бонусов */
+        .bonus-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-bottom: 30px;
-            color: #e0e0e0;
+        }
+        .bonus-card {
+            background: rgba(40, 50, 130, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid #ff4b2b;
+        }
+        .bonus-icon {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .bonus-card h3 {
+            color: var(--gold);
+            margin-top: 0;
+            text-align: center;
+            font-size: 22px;
+        }
+        .bonus-card ul {
+            padding-left: 20px;
+        }
+        .bonus-card li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .highlight {
+            background: linear-gradient(to right, #ff4b2b, #ff416c);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .bonus-levels {
+            overflow-x: auto;
+        }
+        .bonus-levels table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            min-width: 260px;
+        }
+        .bonus-levels th, .bonus-levels td {
+            border: 1px solid #ff4b2b;
+            padding: 8px;
+            text-align: center;
+        }
+        .bonus-levels th {
+            background: rgba(255, 75, 43, 0.2);
+        }
+        .accent {
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .referral-notice {
+            background: rgba(26, 42, 108, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 25px 0;
+            border-left: 4px solid #ff4b2b;
+        }
+        .ref-code {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .ref-code strong {
+            color: var(--gold);
+            font-size: 20px;
+        }
+        .terms {
+            font-size: 14px;
+            margin-top: 20px;
+            opacity: 0.9;
+            background: rgba(255, 75, 43, 0.15);
+            padding: 12px;
+            border-radius: 8px;
         }
         #registerBtn {
             background: #ff4b2b;
@@ -219,6 +304,8 @@
             font-weight: bold;
             margin-top: 20px;
             box-shadow: 0 5px 15px rgba(255,75,43,0.4);
+            width: 100%;
+            max-width: 500px;
         }
         #registerBtn:hover {
             background: #ff416c;
@@ -226,7 +313,7 @@
             box-shadow: 0 10px 25px rgba(255,75,43,0.6);
         }
         
-        /* Блок 5: Социальные сети - ОБНОВЛЕННЫЙ */
+        /* Блок 5: Социальные сети */
         .social-section {
             background: 
                 linear-gradient(rgba(15, 28, 69, 0.9), rgba(15, 28, 69, 0.95)),
@@ -355,6 +442,15 @@
                 padding: 15px 30px;
                 font-size: 18px;
             }
+            .bybit-section h2 {
+                font-size: 30px;
+            }
+            .bonus-info {
+                grid-template-columns: 1fr;
+            }
+            .bonus-card {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -401,18 +497,91 @@
         </div>
     </section>
 
-    <!-- Блок 4: Регистрация на Bybit -->
+    <!-- Блок 4: Регистрация на Bybit - ОБНОВЛЕННЫЙ С БОНУСАМИ -->
     <section class="bybit-section">
         <div class="container">
             <div class="bybit-container">
-                <h2>Начните безопасную торговлю на Bybit</h2>
-                <p>Платформа с продвинутой защитой активов и страховым фондом</p>
-                <button id="registerBtn">Зарегистрироваться на Bybit</button>
+                <h2>Начните безопасную торговлю на Bybit и получите до $30 000 в бонусах</h2>
+                
+                <!-- Новый блок с бонусами -->
+                <div class="bonus-info">
+                    <div class="bonus-card">
+                        <div class="bonus-icon">💰</div>
+                        <h3>Стартовые бонусы</h3>
+                        <ul>
+                            <li><strong>Бонус $50 в USDT</strong> - после регистрации и верификации KYC <span class="highlight">[акция 2025]</span></li>
+                            <li><strong>$20 в USDT</strong> - купон на комиссии фьючерсных рынков</li>
+                            <li><strong>Дополнительно $10</strong> - при первом депозите от $100 <span class="highlight">[в течение 7 дней]</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bonus-card">
+                        <div class="bonus-icon">🚀</div>
+                        <h3>Многоуровневый бонус</h3>
+                        <div class="bonus-levels">
+                            <table>
+                                <tr>
+                                    <th>Уровень</th>
+                                    <th>Депозит</th>
+                                    <th>Объем торгов</th>
+                                    <th>Бонус</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>$500</td>
+                                    <td>$5 000</td>
+                                    <td><strong>$100</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>$3 000</td>
+                                    <td>$10 000</td>
+                                    <td><strong>$350</strong> + скидки</td>
+                                </tr>
+                                <tr>
+                                    <td>Макс</td>
+                                    <td>$250 000</td>
+                                    <td>$150 млн</td>
+                                    <td><strong class="accent">$30 000</strong></td>
+                                </tr>
+                            </table>
+                            <p>Бонусы зачисляются как <strong>торговые кредиты</strong> (прибыль от них выводится!)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bonus-card">
+                        <div class="bonus-icon">🎁</div>
+                        <h3>Дополнительные выгоды</h3>
+                        <ul>
+                            <li><strong>Кэшбэк 10%</strong> на комиссии с промокодом</li>
+                            <li><strong>APR до 555%</strong> на первый депозит в USDT</li>
+                            <li><strong>Мистери-боксы до $1000</strong> при объеме $10 000</li>
+                            <li><strong>VIP-статус</strong> со сниженными комиссиями</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Конец блока с бонусами -->
+                
+                <div class="referral-notice">
+                    <p>⭐ Для получения бонусов используйте:</p>
+                    <div class="ref-code">
+                        <span>Промокод: <strong>6M0PJ9</strong></span>
+                        <span>Или перейдите по ссылке ниже</span>
+                    </div>
+                </div>
+                
+                <a href="https://www.bybit.com/invite?ref=6M0PJ9" id="registerBtn" class="register-button">
+                    Зарегистрироваться на Bybit и получить бонусы
+                </a>
+                
+                <div class="terms">
+                    <p>⚠️ <strong>Важно:</strong> Бонусы активируются в течение 14 дней после регистрации. Требуется верификация KYC. Недоступно для резидентов США, Великобритании и Канады</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Блок 5: Социальные сети - ОБНОВЛЕННЫЙ -->
+    <!-- Блок 5: Социальные сети -->
     <section class="social-section">
         <div class="container">
             <div class="social-container">
