@@ -176,7 +176,7 @@
             left: 120%;
         }
         
-        /* Блок 4: Регистрация на Bybit - ОБНОВЛЕННЫЙ С БОНУСАМИ */
+        /* Блок 4: Регистрация на Bybit */
         .bybit-section {
             padding: 100px 0;
             text-align: center;
@@ -189,10 +189,10 @@
             color: white;
         }
         .bybit-container {
-            max-width: 900px;
+            max-width: 700px;
             margin: 0 auto;
             background: rgba(0, 0, 0, 0.6);
-            padding: 40px;
+            padding: 50px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             backdrop-filter: blur(5px);
@@ -200,96 +200,12 @@
         .bybit-section h2 {
             font-size: 38px;
             color: white;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
-        
-        /* Стили для блока бонусов */
-        .bonus-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-        .bonus-card {
-            background: rgba(40, 50, 130, 0.7);
-            border-radius: 15px;
-            padding: 20px;
-            backdrop-filter: blur(5px);
-            border: 1px solid #ff4b2b;
-        }
-        .bonus-icon {
-            font-size: 36px;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-        .bonus-card h3 {
-            color: var(--gold);
-            margin-top: 0;
-            text-align: center;
-            font-size: 22px;
-        }
-        .bonus-card ul {
-            padding-left: 20px;
-        }
-        .bonus-card li {
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
-        .highlight {
-            background: linear-gradient(to right, #ff4b2b, #ff416c);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        .bonus-levels {
-            overflow-x: auto;
-        }
-        .bonus-levels table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 15px;
-            min-width: 260px;
-        }
-        .bonus-levels th, .bonus-levels td {
-            border: 1px solid #ff4b2b;
-            padding: 8px;
-            text-align: center;
-        }
-        .bonus-levels th {
-            background: rgba(255, 75, 43, 0.2);
-        }
-        .accent {
-            color: var(--gold);
-            font-weight: bold;
-            font-size: 18px;
-        }
-        .referral-notice {
-            background: rgba(26, 42, 108, 0.9);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 25px 0;
-            border-left: 4px solid #ff4b2b;
-        }
-        .ref-code {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
-            font-size: 18px;
-        }
-        .ref-code strong {
-            color: var(--gold);
+        .bybit-section p {
             font-size: 20px;
-        }
-        .terms {
-            font-size: 14px;
-            margin-top: 20px;
-            opacity: 0.9;
-            background: rgba(255, 75, 43, 0.15);
-            padding: 12px;
-            border-radius: 8px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
         }
         #registerBtn {
             background: #ff4b2b;
@@ -304,8 +220,6 @@
             font-weight: bold;
             margin-top: 20px;
             box-shadow: 0 5px 15px rgba(255,75,43,0.4);
-            width: 100%;
-            max-width: 500px;
         }
         #registerBtn:hover {
             background: #ff416c;
@@ -442,15 +356,6 @@
                 padding: 15px 30px;
                 font-size: 18px;
             }
-            .bybit-section h2 {
-                font-size: 30px;
-            }
-            .bonus-info {
-                grid-template-columns: 1fr;
-            }
-            .bonus-card {
-                padding: 15px;
-            }
         }
     </style>
 </head>
@@ -470,17 +375,19 @@
         </div>
     </section>
 
-    <!-- Блок 2: История -->
+    <!-- Блок 2: История - ОБНОВЛЕННАЯ -->
     <section class="story">
         <div class="container story-content">
             <h2>Моя история</h2>
             <p>Все началось с небольших, но успешных сделок. Я чувствовал себя непобедимым, увеличивал ставки, игнорировал правила риск-менеджмента. Когда рынок резко развернулся, я потерял не только прибыль, но и весь депозит - 500 000 рублей.</p>
-            <p>После этого краха я проанализировал все свои ошибки и создал чек-лист безопасности, который теперь использую сам и делюсь с вами.</p>
-            <p>Эти правила помогли мне восстановить капитал и избежать новых потерь.</p>
+            
+            <p>После этого краха я проанализировал все свои ошибки и создал чек-лист безопасности, который теперь использую сам и делюсь с вами. Сейчас я торгую на Bybit - эта биржа предлагает надежную защиту активов и страховой фонд, что особенно важно после моего печального опыта.</p>
+            
+            <p>Эти правила помогли мне восстановить капитал и избежать новых потерь. Главное - дисциплина и контроль рисков, а современные торговые платформы с грамотной системой безопасности делают этот процесс значительно проще.</p>
         </div>
     </section>
 
-    <!-- Блок 3: Кнопка скачивания -->
+    <!-- Блок 3: Кнопка скачивания - УПРОЩЕННАЯ ВЕРСИЯ -->
     <section class="download-section">
         <div class="container">
             <div class="download-container">
@@ -488,95 +395,25 @@
                 <p>Получите PDF с 5 правилами, которые спасут ваш депозит</p>
                 
                 <button id="downloadBtn">Скачать чек-лист сейчас</button>
-                
-                <div id="successMessage" style="display:none; margin-top:30px; padding:20px; background:rgba(232,245,233,0.9); border-radius:10px; color:#333;">
-                    <h3>Чек-лист скачивается!</h3>
-                    <p>Через <span id="countdown">5</span> секунд вы будете перенаправлены на Bybit</p>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Блок 4: Регистрация на Bybit - ОБНОВЛЕННЫЙ С БОНУСАМИ -->
+    <!-- Блок 4: Регистрация на Bybit -->
     <section class="bybit-section">
         <div class="container">
             <div class="bybit-container">
-                <h2>Начните безопасную торговлю на Bybit и получите до $30 000 в бонусах</h2>
+                <h2>Где я сейчас торгую</h2>
+                <p>После своего опыта я выбрал Bybit - платформу с продвинутой защитой активов и страховым фондом. Здесь есть все необходимое для безопасного трейдинга:</p>
                 
-                <!-- Новый блок с бонусами -->
-                <div class="bonus-info">
-                    <div class="bonus-card">
-                        <div class="bonus-icon">💰</div>
-                        <h3>Стартовые бонусы</h3>
-                        <ul>
-                            <li><strong>Бонус $50 в USDT</strong> - после регистрации и верификации KYC <span class="highlight">[акция 2025]</span></li>
-                            <li><strong>$20 в USDT</strong> - купон на комиссии фьючерсных рынков</li>
-                            <li><strong>Дополнительно $10</strong> - при первом депозите от $100 <span class="highlight">[в течение 7 дней]</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bonus-card">
-                        <div class="bonus-icon">🚀</div>
-                        <h3>Многоуровневый бонус</h3>
-                        <div class="bonus-levels">
-                            <table>
-                                <tr>
-                                    <th>Уровень</th>
-                                    <th>Депозит</th>
-                                    <th>Объем торгов</th>
-                                    <th>Бонус</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>$500</td>
-                                    <td>$5 000</td>
-                                    <td><strong>$100</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>$3 000</td>
-                                    <td>$10 000</td>
-                                    <td><strong>$350</strong> + скидки</td>
-                                </tr>
-                                <tr>
-                                    <td>Макс</td>
-                                    <td>$250 000</td>
-                                    <td>$150 млн</td>
-                                    <td><strong class="accent">$30 000</strong></td>
-                                </tr>
-                            </table>
-                            <p>Бонусы зачисляются как <strong>торговые кредиты</strong> (прибыль от них выводится!)</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bonus-card">
-                        <div class="bonus-icon">🎁</div>
-                        <h3>Дополнительные выгоды</h3>
-                        <ul>
-                            <li><strong>Кэшбэк 10%</strong> на комиссии с промокодом</li>
-                            <li><strong>APR до 555%</strong> на первый депозит в USDT</li>
-                            <li><strong>Мистери-боксы до $1000</strong> при объеме $10 000</li>
-                            <li><strong>VIP-статус</strong> со сниженными комиссиями</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Конец блока с бонусами -->
+                <ul style="text-align: left; max-width: 600px; margin: 0 auto 30px;">
+                    <li>Надежное хранение средств с мультиподписью</li>
+                    <li>Страховой фонд на $300 млн для защиты от экстремальных ситуаций</li>
+                    <li>Прозрачная система аудита резервов</li>
+                    <li>Интуитивно понятный интерфейс с инструментами риск-менеджмента</li>
+                </ul>
                 
-                <div class="referral-notice">
-                    <p>⭐ Для получения бонусов используйте:</p>
-                    <div class="ref-code">
-                        <span>Промокод: <strong>6M0PJ9</strong></span>
-                        <span>Или перейдите по ссылке ниже</span>
-                    </div>
-                </div>
-                
-                <a href="https://www.bybit.com/invite?ref=6M0PJ9" id="registerBtn" class="register-button">
-                    Зарегистрироваться на Bybit и получить бонусы
-                </a>
-                
-                <div class="terms">
-                    <p>⚠️ <strong>Важно:</strong> Бонусы активируются в течение 14 дней после регистрации. Требуется верификация KYC. Недоступно для резидентов США, Великобритании и Канады</p>
-                </div>
+                <button id="registerBtn">Зарегистрироваться на Bybit</button>
             </div>
         </div>
     </section>
@@ -615,31 +452,15 @@
     </footer>
 
     <script>
+        // Упрощенный скрипт скачивания без редиректа
         document.getElementById('downloadBtn').addEventListener('click', function() {
-            // Скачиваем PDF
             const link = document.createElement('a');
             link.href = 'https://docs.google.com/document/d/1_Mtz1Ufr_44uQXTZ_YB_a7z00X19-dox8aKh_iQhjUg/export?format=pdf';
             link.download = 'Чек-лист_безопасности_криптотрейдинга.pdf';
             link.click();
-            
-            // Показываем сообщение
-            document.getElementById('successMessage').style.display = 'block';
-            
-            // Запускаем таймер
-            let seconds = 5;
-            const countdownEl = document.getElementById('countdown');
-            const timer = setInterval(() => {
-                seconds--;
-                countdownEl.textContent = seconds;
-                
-                if(seconds <= 0) {
-                    clearInterval(timer);
-                    window.location.href = 'https://www.bybit.com/invite?ref=6M0PJ9';
-                }
-            }, 1000);
         });
 
-        // Добавляем обработчик для кнопки регистрации
+        // Обработчик для кнопки регистрации
         document.getElementById('registerBtn').addEventListener('click', function() {
             window.location.href = 'https://www.bybit.com/invite?ref=6M0PJ9';
         });
