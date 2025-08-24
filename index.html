@@ -726,11 +726,10 @@
     
     <div class="sidebar-image">
         <div class="sidebar-badge">БОНУС $50</div>
-        <img src="https://images.unsplash.com/photo-1620336655055-b9d4b3a6dc29?w=400&h=200&fit=crop" 
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEyYTZjO3N0b3Atb3BhY2l0eToxIi8+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2ZmNGIyYjtzdG9wLW9wYWNpdHk6MSIvPgogICAgICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8L2RlZnM+CiAgICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMGEwZjI5Ii8+CiAgICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMDAiIHI9IjYwIiBmaWxsPSJ1cmwoI2dyYWRpZW50KSIvPgogICAgPHRleHQgeD0iMjAwIiB5PSI5MCIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QllCSVQ8L3RleHQ+CiAgICA8dGV4dCB4PSIyMDAiIHk9IjEyMCIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VFJBREUgV0lUSCBCT05VUzwvdGV4dD4KICAgIDx0ZXh0IHg9IjIwMCIgeT0iMTUwIiBmaWxsPSIjZmZkMTY2IiBmb250LXNpemU9IjMwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPiQ1MDwvdGV4dD4KPC9zdmc+" 
              alt="Торговая платформа Bybit"
-             loading="lazy"
-             onload="this.style.opacity='1'">
-        <div class="image-loader">Загрузка...</div>
+             onload="this.style.opacity='1'; this.parentElement.querySelector('.image-loader').style.display='none'">
+        <div class="image-loader">Загрузка изображения...</div>
     </div>
     
     <div class="sidebar-content">
@@ -740,9 +739,9 @@
         </div>
         <ul class="sidebar-features">
             <li>Страховой фонд $300 млн</li>
-            <li>Низкие комиссии</li>
+            <li>Низкие комиссии 0.1%</li>
             <li>Бонусы до $30,000</li>
-            <li>Высокая ликвидность</li>
+            <li>Мгновенное исполнение ордеров</li>
         </ul>
         <a href="https://www.bybit.com/invite?ref=6M0PJ9" class="sidebar-btn">Зарегистрироваться</a>
         <div class="sidebar-ref">Промокод: <strong>6M0PJ9</strong></div>
@@ -755,55 +754,63 @@
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    width: 300px;
-    background: linear-gradient(135deg, #1a2a6c 0%, #3a4a9c 100%);
+    width: 320px;
+    background: linear-gradient(135deg, #1a2a6c 0%, #2b3b7c 100%);
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    border: 2px solid rgba(255, 75, 43, 0.5);
-    z-index: 1000;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    border: 2px solid rgba(255, 75, 43, 0.6);
+    z-index: 10000;
+    backdrop-filter: blur(10px);
 }
 
 .sidebar-header {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 12px;
 }
 
 .sidebar-logo {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     color: #ffd166;
     margin-right: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .sidebar-close {
     background: none;
     border: none;
     color: white;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
     margin-left: auto;
-    opacity: 0.7;
+    opacity: 0.8;
     transition: opacity 0.3s;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .sidebar-close:hover {
     opacity: 1;
+    background: rgba(255,255,255,0.1);
 }
 
 .sidebar-image {
     width: 100%;
-    height: 160px;
-    border-radius: 10px;
+    height: 180px;
+    border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     position: relative;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background: linear-gradient(90deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
     background-size: 200% 100%;
-    animation: loading 1.5s infinite;
 }
 
 .sidebar-image img {
@@ -811,7 +818,7 @@
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
 }
 
 .image-loader {
@@ -819,34 +826,23 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #666;
+    color: rgba(255,255,255,0.7);
     font-size: 14px;
-}
-
-.sidebar-image img.loaded {
-    opacity: 1;
-}
-
-.sidebar-image img.loaded ~ .image-loader {
-    display: none;
-}
-
-@keyframes loading {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    font-weight: 500;
 }
 
 .sidebar-badge {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #ff4b2b 0%, #ff416c 100%);
     color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
+    padding: 8px 14px;
+    border-radius: 25px;
+    font-size: 13px;
     font-weight: bold;
     z-index: 2;
+    box-shadow: 0 4px 12px rgba(255,75,43,0.4);
 }
 
 .sidebar-content {
@@ -855,77 +851,105 @@
 
 .sidebar-content h3 {
     color: #ffd166;
-    margin-bottom: 15px;
-    font-size: 18px;
+    margin-bottom: 18px;
+    font-size: 20px;
     text-align: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .sidebar-bonus {
-    background: rgba(255, 75, 43, 0.2);
-    padding: 10px;
-    border-radius: 8px;
-    margin: 15px 0;
+    background: rgba(255, 75, 43, 0.25);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 18px 0;
     text-align: center;
-    border: 1px dashed #ff4b2b;
+    border: 2px dashed rgba(255, 75, 43, 0.5);
 }
 
 .sidebar-bonus span {
     font-weight: bold;
     color: #ffd166;
-    font-size: 20px;
+    font-size: 24px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .sidebar-features {
-    margin: 15px 0;
+    margin: 18px 0;
     padding: 0;
 }
 
 .sidebar-features li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     list-style: none;
+    font-size: 14px;
+    padding: 6px 0;
 }
 
 .sidebar-features li:before {
     content: "✓";
     color: #4caf50;
     font-weight: bold;
-    margin-right: 8px;
+    margin-right: 10px;
+    font-size: 16px;
 }
 
 .sidebar-btn {
     display: block;
     width: 100%;
-    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    background: linear-gradient(135deg, #ff4b2b 0%, #ff416c 100%);
     color: white;
     border: none;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 16px;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 20px;
     text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 20px rgba(255,75,43,0.4);
 }
 
 .sidebar-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255,75,43,0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255,75,43,0.6);
 }
 
 .sidebar-ref {
-    font-size: 12px;
+    font-size: 13px;
     text-align: center;
-    margin-top: 10px;
-    opacity: 0.8;
+    margin-top: 15px;
+    opacity: 0.9;
+    color: rgba(255,255,255,0.8);
+}
+
+.sidebar-ref strong {
+    color: #ffd166;
+    font-size: 14px;
 }
 
 @media (max-width: 768px) {
     .bybit-sidebar {
-        width: 280px;
+        width: 300px;
         right: 10px;
+        padding: 15px;
+    }
+    
+    .sidebar-image {
+        height: 160px;
+    }
+    
+    .sidebar-content h3 {
+        font-size: 18px;
+    }
+    
+    .sidebar-bonus span {
+        font-size: 22px;
     }
 }
 </style>
@@ -938,18 +962,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Показываем индикатор загрузки
     loader.style.display = 'block';
     
-    // Когда изображение загрузится
-    image.onload = function() {
-        this.style.opacity = '1';
-        this.classList.add('loaded');
+    // Если изображение уже загружено (из кэша)
+    if (image.complete && image.naturalHeight !== 0) {
+        image.style.opacity = '1';
         loader.style.display = 'none';
-    };
-    
-    // Если изображение не загрузится
-    image.onerror = function() {
-        loader.textContent = 'Ошибка загрузки';
-        loader.style.color = '#ff4b2b';
-    };
+    }
     
     // Закрытие панели
     document.querySelector('.sidebar-close').addEventListener('click', function() {
