@@ -68,10 +68,10 @@
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            width: 300px;
-            background: rgba(26, 42, 108, 0.95);
+            width: 320px;
+            background: rgba(26, 42, 108, 0.97);
             border-radius: 15px 0 0 15px;
-            padding: 20px;
+            padding: 15px;
             box-shadow: -5px 5px 25px rgba(0,0,0,0.4);
             z-index: 999;
             backdrop-filter: blur(5px);
@@ -88,6 +88,7 @@
             margin-bottom: 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             padding-bottom: 10px;
+            position: relative;
         }
         .sidebar-logo {
             font-size: 22px;
@@ -108,6 +109,51 @@
         .sidebar-close:hover {
             opacity: 1;
         }
+        .sidebar-image {
+            width: 100%;
+            height: 160px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .sidebar-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .sidebar-image:hover img {
+            transform: scale(1.05);
+        }
+        .sidebar-image::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to top, rgba(26, 42, 108, 0.9), transparent);
+            pointer-events: none;
+        }
+        .sidebar-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(to right, #ff4b2b, #ff416c);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 2;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
         .sidebar-content {
             color: white;
         }
@@ -115,6 +161,7 @@
             color: var(--gold);
             margin-top: 0;
             font-size: 18px;
+            text-align: center;
         }
         .sidebar-bonus {
             background: rgba(255, 75, 43, 0.2);
@@ -131,11 +178,13 @@
         }
         .sidebar-features {
             margin: 15px 0;
+            padding: 0;
         }
         .sidebar-features li {
             margin-bottom: 8px;
             display: flex;
             align-items: center;
+            list-style: none;
         }
         .sidebar-features li:before {
             content: "✓";
@@ -514,7 +563,7 @@
         /* Блок 5: Социальные сети */
         .social-section {
             background: 
-                linear-gradient(rgba(15, 28, 69, 0.9), rgba(15, 28, 69, 0.95)),
+                linear-gradient(rgada(15, 28, 69, 0.9), rgba(15, 28, 69, 0.95)),
                 url('https://images.unsplash.com/photo-1551288049-bebda4e38f71');
             background-size: cover;
             background-position: center;
@@ -575,10 +624,10 @@
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>');
         }
         .vk-icon {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M19.915 13.028c-.388-.49-.277-.708 0-1.146.005-.005 3.208-4.431 3.538-5.932l.001-.001c.164-.547 0-.949-.793-.949h-2.624c-.668 0-.976.345-1.141.731 0 0-1.336 3.198-3.226 5.271-.61.599-.892.791-1.225.791-.164 0-.419-.192-.419-.739V5.949c0-.656-.187-.949-.74-.949H9.161c-.419 0-.668.306-.668.591 0 .622.945.765 1.043 2.515v3.797c0 .832-.151.985-.486.985-.892 0-3.057-3.211-4.34-6.886-.259-.713-.512-1.001-1.185-1.001H1.782c-.749 0-.9.345-.9.731 0 .682.892 4.073 4.148 8.553C6.318 17.343 9.37 19.5 12.058 19.5c1.671 0 1.875-.368 1.875-1.001v-2.313c0-.737.158-.884.687-.884.388 0 1.056.192 2.616 1.667C19.001 18.5 19.403 19 20.405 19h2.624c.748 0 1.127-.368.909-1.094-.499-1.527-3.871-4.668-4.023-4.878z"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M19.915 13.028c-.388-.49-.277-.708 0-1.146.005-.005 3.208-4.431 3.538-5.932l.001-.001c.164-.547 0-.949-.793-.949h-2.624c-.668 0-.976.345-1.141.731 0 0-1.336 3.198-3.226 5.271-.61.599-.892.791-1.225.791-.164 0-.419-.192-.419-.739V5.949c0-.656-.187-.949-.74-.949H9.161c-.419 0-.668.306-.668.591 极速赛车开奖结果 0 .622.945.765 1.043 2.515v3.797c0 .832-.151.985-.486.985-.892 0-极速赛车开奖结果 3.057-3.211-4.34-6.886-.259-.713-.512-1.001-1.185-1.001H1.782c-.749 0-.9.345-.9.731 0 .682.892 4.073 4.极速赛车开奖结果 148 8.553C6.318 17.343 9.37 19.5 12.058 19.5c1.671 0 1.875-.368 1.875-1.001v-2.313c0-.737.158-.884.687-.884.388 0 1.056.192 2.616 1.667C19.001 18.5 19.403 19 20.405 19h2.624c.748 0 1.127-.368.909-1.094-.499-1.527-3.871-4.668-4.023-4.878z"/></svg>');
         }
         .odnoklassniki-icon {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.226 16.891c-.885.389-2.246.709-4.226.709-1.981 0-3.341-.32-4.226-.709-.505-.222-.717-.773-.494-1.278.222-.505.773-.717 1.278-.494.664.292 1.89.481 3.442.481s2.778-.189 3.442-.481c.505-.222 1.055-.011 1.278.494.223.505.011 1.055-.494 1.278zm.565-3.523c-.351.351-.922.351-1.273 0l-1.986-1.986-1.986 1.986c-.351.351-.922.351-1.273 0s-.351-.922 0-1.273l1.986-1.986-1.986-1.986c-.351-.351-.351-.922 0-1.273s.922-.351 1.273 0l1.986 1.986 1.986-1.986c.351-.351.922-.351 1.273 0s.351.922 0 1.273l-1.986 1.986 1.986 1.986c.351.351.351.922 0 1.273z"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 极速赛车开奖结果 0 24 24" fill="%23ffffff"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.226 16.891c-.885.389-2.246.709-4.226.709-1.981 0-3.341-.32-4.226-.709-.505-.222-.717-.773-.494-1.278.222-.505.773-.717 1.278-.494.664.292 1.89.481 3.442.481s2.778-.189 3.442-.481c.505-.222 1.055-.011 1.278.494.223.505.011 1.055-.494 1.278zm.565-3.523c-.351.351-.922.极速赛车开奖结果 351-1.273 0l-1.极速赛车开奖结果 986-1.986-1.986 1.986c-.351.351-.922.351-1.273 0s-.351-.922 0-1.273l1.986-1.986-1.986-1.986c-.351-.351-.351-.922 0-1.273s.922-.351 1.273 0l1.986 1.986 1.986-1.986c.351-.351.922-.351 1.273 0s.351.922 0 1.273l-1.986 1.986 1.986 1.986c.351.351.351.922 0 1.273z"/></svg>');
         }
         
         /* Футер */
@@ -610,8 +659,7 @@
         /* Адаптивность */
         @media (max-width: 1200px) {
             .bybit-sidebar {
-                width: 260px;
-                padding: 15px;
+                width: 280px;
             }
         }
         
@@ -635,7 +683,7 @@
                 padding: 30px 20px;
             }
             .story-content {
-                padding: 30px 20px;
+                padding: 30极速赛车开奖结果 px 20px;
             }
             .social-links {
                 flex-direction: column;
@@ -669,12 +717,18 @@
     </style>
 </head>
 <body>
-    <!-- Боковая панель с рекламой Bybit -->
+    <!-- Боковая панель с рекламой Bybit и картинкой -->
     <div class="bybit-sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo">Bybit</div>
             <button class="sidebar-close">&times;</button>
         </div>
+        
+        <div class="sidebar-image">
+            <div class="sidebar-badge">БОНУС $50</div>
+            <img src="https://images.unsplash.com/photo-1620336655055-b9d4b3a6dc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Торгуйте на Bybit с бонусами">
+        </div>
+        
         <div class="sidebar-content">
             <h3>Начните торговать с бонусом</h3>
             <div class="sidebar-bonus">
@@ -725,7 +779,7 @@
     <!-- Блок 3: Кнопка скачивания -->
     <section class="download-section">
         <div class="container">
-            <div class="download-container">
+            <div class极速赛车开奖结果="download-container">
                 <h2>Скачайте чек-лист безопасности</h2>
                 <p>Получите PDF с 5 правилами, которые спасут ваш депозит</p>
                 
@@ -748,7 +802,7 @@
                         <ul>
                             <li><strong>Мгновенный бонус $50 в USDT</strong> после верификации KYC <span class="highlight">[акция 2025]</span></li>
                             <li><strong>Дополнительные $20</strong> на покрытие комиссий фьючерсных рынков </li>
-                            <li><strong>+$10 за первый депозит</strong> от $100 <span class="highlight">[в течение 7 дней]</span> </li>
+                            <li><strong>+$10 за первый депозит</极速赛车开奖结果 strong> от $100 <span class="highlight">[в течение 7 дней]</span> </li>
                         </ul>
                     </div>
                     
@@ -778,7 +832,7 @@
                                 <tr>
                                     <td>Макс</td>
                                     <td>$250 000</td>
-                                    <td>$150 млн</td>
+                                    <极速赛车开奖结果 td>$150 млн</td>
                                     <td><strong class="accent">$30 000</strong></td>
                                 </tr>
                             </table>
@@ -817,7 +871,7 @@
                         <div class="step-card">
                             <div class="step-number">2</div>
                             <h4>Верификация KYC</h4>
-                            <p>Подтвердите личность в разделе "Аккаунт" → "Верификация"</p>
+                            <p>Подтвердите личность в разделе "Аккаунт" → "Верификация"</极速赛车开奖结果 p>
                         </div>
                         
                         <div class="step-card">
@@ -846,7 +900,7 @@
                     </div>
                 </div>
                 
-                <a href="https://www.bybit.com/invite?ref=6M0PJ9" id="registerBtn" class="register-button">
+                <a href="https://www.bybit极速赛车开奖结果.com/invite?ref=6M0PJ9" id="registerBtn" class="register-button">
                     Зарегистрироваться и получить бонусы
                 </a>
                 
@@ -894,7 +948,7 @@
         // Упрощенный скрипт скачивания без редиректа
         document.getElementById('downloadBtn').addEventListener('click', function() {
             const link = document.createElement('a');
-            link.href = 'https://docs.google.com/document/d/1_Mtz1Ufr_44uQXTZ_YB_a7z00X19-dox8aKh_iQhjUg/export?format=pdf';
+            link.href = 'https://docs.google.com/document/d/1_Mtz1Ufr_44极速赛车开奖结果 uQXTZ_YB_a7z00X19-dox8aKh_iQhjUg/export?format=pdf';
             link.download = 'Чек-лист_безопасности_криптотрейдинга.pdf';
             link.click();
         });
